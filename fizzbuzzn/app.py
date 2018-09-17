@@ -1,13 +1,11 @@
-def fizzbuzz(value: str) -> str:
+def fizzbuzz(num):
     """FizzBuzzのルールのもと結果を返す
 
     Args:
-        value: 数字
+        num(int): 数字
     Return:
-        'FizzBuzz' | 'Buzz' | 'Fizz' | ``value``
+        'FizzBuzz' | 'Buzz' | 'Fizz' | str(`num`)
     """
-    num = int(value)
-
     if num % 15 == 0:
         return 'FizzBuzz'
     elif num % 5 == 0:
@@ -15,4 +13,4 @@ def fizzbuzz(value: str) -> str:
     elif num % 3 == 0:
         return 'Fizz'
     else:
-        return value
+        return str(num)
