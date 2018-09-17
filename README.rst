@@ -4,7 +4,7 @@ fizzbuzzn(practice)
 | 簡単なfizzbuzzプログラムからバージョンアップを繰り返すことで、
 | pythonでのプログラムの作り方を学んでいく。
 
-usage (v0.0.1)
+usage (v0.0.2)
 --------------
 apiはfizzbuzz(num)関数のみ
 
@@ -13,11 +13,9 @@ apiはfizzbuzz(num)関数のみ
     >>> from fizzbuzzn.app import fizzbuzz
     >>> fizzbuzz(1)
     1
-    >>> fizzbuzz(-1)
-    -1
-    >>> fizzbuzz(3)
-    Fizz
-    >>> fizzbuzz(5)
-    Buzz
     >>> fizzbuzz(15)
+    FizzBuzz
+    >>> fizzbuzz(0, zeroable=False)
+    0
+    >>> fizzbuzz(0, zeroable=True)
     FizzBuzz

@@ -13,3 +13,10 @@ class Test_Fizzbuzz:
 
     def test_input_99_output_Fizz(self):
         assert app.fizzbuzz(99) == 'Fizz'
+
+    def test_input_0_output_FizzBuzz_with_zeroable_is_True(self):
+        assert app.fizzbuzz(0) == 'FizzBuzz'
+        assert app.fizzbuzz(0, zeroable=True) == 'FizzBuzz'
+
+    def test_input_0_output_0_with_zeroable_is_False(self):
+        assert app.fizzbuzz(0, zeroable=False) == '0'
