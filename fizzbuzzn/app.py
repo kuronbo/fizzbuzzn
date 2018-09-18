@@ -1,3 +1,6 @@
+from fizzbuzzn.evaluations import MultipleNumber
+
+
 def fizzbuzz(num):
     """FizzBuzzのルールのもと結果を返す。
 
@@ -13,11 +16,12 @@ def fizzbuzz(num):
     if num == 0:
         return str(num)
 
-    if num % 15 == 0:
-        return 'FizzBuzz'
-    elif num % 5 == 0:
-        return 'Buzz'
-    elif num % 3 == 0:
-        return 'Fizz'
-    else:
-        return str(num)
+    rules = [
+        (MultipleNumber(15), 'FizzBuzz'),
+        (MultipleNumber(5), 'Buzz'),
+        (MultipleNumber(3), 'Fizz'),
+    ]
+    for ev, output in rules:
+        if ev.is_valid(str(num)):
+            return output
+    return str(num)
