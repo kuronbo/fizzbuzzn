@@ -13,3 +13,6 @@ class Test_Fizzbuzz:
 
     def test_input_99_output_Fizz(self):
         assert app.fizzbuzz(99) == 'Fizz'
+
+    def test_input_0_output_0(self):
+        assert app.fizzbuzz(0) == '0'
