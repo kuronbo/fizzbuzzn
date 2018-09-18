@@ -15,7 +15,3 @@ apiはfizzbuzz(num)関数のみ
     1
     >>> fizzbuzz(15)
     FizzBuzz
-    >>> fizzbuzz(0, zeroable=False)
-    0
-    >>> fizzbuzz(0, zeroable=True)
-    FizzBuzz
