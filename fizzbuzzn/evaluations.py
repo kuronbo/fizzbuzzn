@@ -1,3 +1,6 @@
+from fizzbuzzn.utils import is_int
+
+
 class Evaluation:
     def is_valid(self, value):
         raise NotImplementedError
@@ -8,5 +11,7 @@ class MultipleNumber(Evaluation):
         self.multiple = int(multiple)
 
     def is_valid(self, value):
-        num = int(value)
-        return num % self.multiple == 0
+        if is_int(value):
+            return int(value) % self.multiple == 0
+        else:
+            return False

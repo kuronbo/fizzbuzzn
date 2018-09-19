@@ -1,4 +1,5 @@
 from fizzbuzzn.evaluations import MultipleNumber
+from fizzbuzzn.outputs import ConstStr
 
 
 def fizzbuzz(num):
@@ -17,11 +18,11 @@ def fizzbuzz(num):
         return str(num)
 
     rules = [
-        (MultipleNumber(15), 'FizzBuzz'),
-        (MultipleNumber(5), 'Buzz'),
-        (MultipleNumber(3), 'Fizz'),
+        (MultipleNumber(15), ConstStr('FizzBuzz')),
+        (MultipleNumber(5), ConstStr('Buzz')),
+        (MultipleNumber(3), ConstStr('Fizz')),
     ]
     for ev, output in rules:
         if ev.is_valid(str(num)):
-            return output
+            return output.generate(str(num))
     return str(num)

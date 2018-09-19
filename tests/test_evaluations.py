@@ -16,3 +16,12 @@ class TestMultipleNumber__IsValid:
 
     def test_input_m3_output_False(self):
         assert self.evaluation.is_valid('-3') is False
+
+    def test_input_mm3_output_False(self):
+        assert self.evaluation.is_valid('--3') is False
+
+    def test_input_p5_output_True(self):
+        assert self.evaluation.is_valid('+5') is True
+
+    def test_input_float_output_False(self):
+        assert self.evaluation.is_valid('4.5') is False

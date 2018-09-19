@@ -4,7 +4,7 @@ fizzbuzzn(practice)
 | 簡単なfizzbuzzプログラムからバージョンアップを繰り返すことで、
 | pythonでのプログラムの作り方を学んでいく。
 
-usage (v0.0.3)
+usage (v0.0.4)
 --------------
 apiはfizzbuzz(num)関数のみ
 
