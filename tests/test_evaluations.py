@@ -1,4 +1,21 @@
-from fizzbuzzn.evaluations import MultipleNumber
+from fizzbuzzn.evaluations import MultipleNumber, ConstNumber
+
+
+class TestConstNumber__IsValid:
+    def setup_method(self):
+        self.evaluation = ConstNumber(5)
+
+    def test_input_5_output_True(self):
+        assert self.evaluation.is_valid('5') is True
+
+    def test_input_4_output_False(self):
+        assert self.evaluation.is_valid('4') is False
+
+    def test_input_m5_output_False(self):
+        assert self.evaluation.is_valid('-5') is False
+
+    def test_input_p5_output_True(self):
+        assert self.evaluation.is_valid('+5') is True
 
 
 class TestMultipleNumber__IsValid:

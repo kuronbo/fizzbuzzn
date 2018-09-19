@@ -1,28 +1,26 @@
-from fizzbuzzn.evaluations import MultipleNumber
-from fizzbuzzn.outputs import ConstStr
+from fizzbuzzn.evaluations import MultipleNumber, ConstNumber, All
+from fizzbuzzn.outputs import ConstOutput, ValueOutput
 
 
-def fizzbuzz(num):
+def fizzbuzz(value):
     """FizzBuzzのルールのもと結果を返す。
 
     `num`が3の倍数なら「Fizz」、5の倍数なら「Buzz」、3かつ5の倍数なら「FizzBuzz」、
-    それ以外ならそのまま「`num`」を返す。
+    それ以外ならそのまま「`value`」を返す。
     また、この関数は0を倍数に含めないものとする（ex 0は5の倍数ではない。0の倍数は存在しない。）
 
     Args:
-        num(int): 数字
+        value(str): 変換前の値
     Return:
-        'FizzBuzz' | 'Buzz' | 'Fizz' | str(`num`)
+        'FizzBuzz' | 'Buzz' | 'Fizz' | `value`
     """
-    if num == 0:
-        return str(num)
-
     rules = [
-        (MultipleNumber(15), ConstStr('FizzBuzz')),
-        (MultipleNumber(5), ConstStr('Buzz')),
-        (MultipleNumber(3), ConstStr('Fizz')),
+        (ConstNumber(0), ValueOutput()),
+        (MultipleNumber(15), ConstOutput('FizzBuzz')),
+        (MultipleNumber(5), ConstOutput('Buzz')),
+        (MultipleNumber(3), ConstOutput('Fizz')),
+        (All(), ValueOutput())
     ]
     for ev, output in rules:
-        if ev.is_valid(str(num)):
-            return output.generate(str(num))
-    return str(num)
+        if ev.is_valid(value):
+            return output.generate(value)
